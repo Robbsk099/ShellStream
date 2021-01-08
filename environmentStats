@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
+    <style>
+        #output {
+            font-family: 'Michroma', sans-serif;
+            font-weight: 100;
+             color: lightgray;
+            display: inline-block;
+            border-radius: 5px;
+            padding: 2px 5px;
+            background-color: rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+
+<body translate="no" >
+  <div id="output"></div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+  <script>
+var output = document.getElementById("output");
+var d = new Date();
+
+var c;
+setInterval(
+c = function() {
+    var isNight;
+    if (d.getHours() >= 21 <= 09) {
+        isNight = true;
+    }
+
+    var minTemp = isNight ? 17 : 27;
+    var maxTemp = isNight ? 19 : 31;
+
+    var randomTemp = Math.floor(Math.random() * (+maxTemp + 1 - +minTemp)) + +minTemp; 
+    var randomHumidity = Math.floor(Math.random() * (+61 + 1 - +50)) + +50; 
+
+    output.innerText = `Temperature: ${randomTemp}C \n Humidity: ${randomHumidity}`
+}, 200000);
+c();
+
+  </script>
+</body>
+</html>
