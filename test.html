@@ -1,11 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
 
-<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
 
+    <style>
+        #output {
+            font-family: 'Michroma', sans-serif;
+            font-weight: 100;
+        }
+    </style>
 </head>
 
-<body>
-hello world
+<body translate="no" >
+  <div id="output"></div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+  <script>
+var output = document.getElementById("output");
+
+var c;
+setInterval(
+c = function() {
+    output.innerText = moment().format('h:mm:ss a');
+}, 1000);
+c();
+
+  </script>
 </body>
 </html>
