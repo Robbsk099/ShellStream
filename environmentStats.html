@@ -10,7 +10,6 @@
         #output {
             font-family: 'Michroma', sans-serif;
             font-weight: 100;
-          font-size: 2rem;
              color: lightgray;
             display: inline-block;
             border-radius: 5px;
@@ -32,7 +31,8 @@ var c;
 setInterval(
 c = function() {
     var isNight;
-    if (d.getHours() >= 21 <= 09) {
+    console.log(d.getHours());
+    if (d.getHours() <= 9 && d.getHours() >= 21 ) {
         isNight = true;
     }
 
