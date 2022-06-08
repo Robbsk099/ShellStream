@@ -33,7 +33,7 @@ setInterval(
 c = function() {
     var isNight;
     console.log(d.getHours());
-    if (d.getHours() <= 9 && d.getHours() >= 21 ) {
+    if (d.getHours() < 21) {
         isNight = true;
     }
 
